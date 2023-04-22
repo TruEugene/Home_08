@@ -23,7 +23,7 @@ def eugene_def():
 #        st.write(saved)
 
     # Вывести Pclass, Name, Age спасённых с именами начинающихся на введённый текст
-    name = st.text_input("Поиск по начальным буквам имени:")
+    name = st.text_input("Поиск по начальным буквам имени:", "Введите первые буквы фамилии...")
     if name == '':
         st.write(saved)
     elif name != '':
