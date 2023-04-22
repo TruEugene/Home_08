@@ -4,7 +4,7 @@ import streamlit as st
 
 def t_def():
     st.text('Тест всякого')
-    age = st.slider("Задайте диапазон возраста", 0, 120, (30, 60))
+    values = st.slider("Задайте диапазон возраста", 0, 120, (30, 60))
     with open("data.csv") as data_file:
         for line in data_file:
             lst = line.split(',')
