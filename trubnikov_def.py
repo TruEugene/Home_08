@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
 
-st.subheader("Спасённые женщины Титаника")
-
 def eugene_def():
+    st.header("Спасённые женщины Титаника")
+
     # Создадим переменную df и запишем в неё содержимое data.csv
     df = pd.read_csv('data.csv')
 
