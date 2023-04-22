@@ -22,6 +22,6 @@ def t_def():
     # Удалим ненужные столбцы из отфильтрованной таблицы.
     save_male = pd.DataFrame(data=save_male, columns=columns)
 
-    # Вывести Pclass, Name, Age спасённых с именами начинающихся на введённый текст
+    # Вывести Pclass, Name, Age спасённых
     values = st.slider("Задайте диапазон возраста", 0, 120, (30, 60))
     st.write(save_male[save_male['Age'].between(values)])
