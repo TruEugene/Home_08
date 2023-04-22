@@ -23,7 +23,9 @@ def t_def():
     save_male = pd.DataFrame(data=save_male, columns=columns)
 
     # Вывести Pclass, Name, Age спасённых
-    x, y = st.slider("Задайте диапазон возраста", None, 90, (30, 60))
+    x, y = st.slider("Задайте диапазон возраста", 0, 90, (30, 60))
     save_male_filter = save_male[save_male['Age'].between(x, y)]
     st.write(save_male_filter)
 
+    if st.checkbox('Показать мужчин без указания возраста'):
+        st.write(save_male[save_male['Age'].isna()])
