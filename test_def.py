@@ -6,7 +6,7 @@ import pandas as pd
 def t_def():
     st.text('Тест всякого')
 
-#    st.header("Спасённые мужчины Титаника среднего возраста")
+    #    st.header("Спасённые мужчины Титаника среднего возраста")
 
     # Создадим переменную df и запишем в неё содержимое data.csv
     df = pd.read_csv('data.csv')
@@ -25,5 +25,11 @@ def t_def():
     # Вывести Pclass, Name, Age спасённых
     values = st.slider("Задайте диапазон возраста", 0, 120, (30, 60))
     st.write(values)
-    df = save_male[(save_male['Age'] == values)]
-    st.write(df)
+    st.write(save_male[(save_male['Age'] == values)])
+
+
+"""
+    day_date = st.slider("Date to chose", 0, 120, (30, 60))
+    st.write(f"Data for {day_date.date()}")
+    df = df[(df['date'] == day_date)]
+"""
