@@ -1,5 +1,6 @@
 import streamlit as st
 import parhacheva_def
+import test_def
 import trubnikov_def
 import fatkieva_def
 import malashkin_def
@@ -18,6 +19,7 @@ artem = "Малашкин А.С. (strug2012). Вариант 3."
 olga = "Маслова О.И. (o.i.maslova). Вариант ."
 ilya = "Юрин И.А. (ily-iury). Вариант ."
 nadejda = "Чербаджи Н.А. (kaira1986). Вариант ."
+test = "тест"
 
 members_list = [eugene, mariya, venera, artem, olga, ilya, nadejda]
 
@@ -37,3 +39,5 @@ elif member == ilya:
     urin_def.ilya_def()
 elif member == nadejda:
     cherbadji_def.nadejda_def()
+elif member == test_def:
+    test_def.t_def()
