@@ -14,3 +14,4 @@ def t_def():
             age = lst[6]
             if sex == "male" and age != '' and 30 <= float(age) <= 60:
                 st.text(name[1:-1] + " " + age + " " + pclass)
+
