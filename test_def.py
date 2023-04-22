@@ -21,17 +21,10 @@ def t_def():
 
     # Удалим ненужные столбцы из отфильтрованной таблицы, а также заполним пропуски нулями
     save_male = pd.DataFrame(data=save_male, columns=columns)
-    save_male['Age'] = save_male['Age'].fillna(0)
+#    save_male['Age'] = save_male['Age'].fillna(0)
 
     # Вывести Pclass, Name, Age спасённых
     x, y = st.slider("Задайте диапазон возраста", 0, 120, (30, 60))
-    st.write(x, y)
-    save_male_group = save_male[save_male['Age'].between(x, y)]
-    st.write(save_male_group)
+    save_male_filter = save_male[save_male['Age'].between(x, y)]
+    st.write(save_male_filter)
 
-
-"""
-    day_date = st.slider("Date to chose", 0, 120, (30, 60))
-    st.write(f"Data for {day_date.date()}")
-    df = df[(df['date'] == day_date)]
-"""
