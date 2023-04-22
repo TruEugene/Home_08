@@ -24,8 +24,4 @@ def t_def():
 
     # Вывести Pclass, Name, Age спасённых с именами начинающихся на введённый текст
     values = st.slider("Задайте диапазон возраста", 0, 120, (30, 60))
-
-    age = save_male['Age']
-
-    if age != '':
-        st.write(save_male[save_male['Age'].between(values)])
+    st.write(save_male[save_male['Age'].between(values)])
