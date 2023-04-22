@@ -12,7 +12,7 @@ st.image('https://proprikol.ru/wp-content/uploads/2021/05/kartinki-titanik-44.jp
 st.title('Проект: "Титаник"')
 
 eugene = "Трубников Е.А. (trubnikov.e). Вариант 5."
-mariya = "Пархачёва М.А. (masha). Вариант ."
+mariya = "Пархачёва М.А. (masha). Вариант 7."
 venera = "Фаткиева В.И. (iris20200). Вариант ."
 artem = "Малашкин А.С. (strug2012). Вариант 3."
 olga = "Маслова О.И. (o.i.maslova). Вариант ."
