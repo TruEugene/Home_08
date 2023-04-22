@@ -19,10 +19,12 @@ def eugene_def():
     saved = pd.DataFrame(data=saved, columns=columns)
 
     # Возможность показать всю таблицу
-    if st.checkbox('Показать весь список выживших'):
-        st.write(saved)
+#    if st.checkbox('Показать весь список выживших'):
+#        st.write(saved)
 
     # Вывести Pclass, Name, Age спасённых с именами начинающихся на введённый текст
     name = st.text_input("Поиск по начальным буквам имени:")
-    if name != '':
+    if name == '':
+        st.write(saved)
+    elif name != '':
         st.write(saved[saved['Name'].str.startswith(name)])
