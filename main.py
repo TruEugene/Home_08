@@ -11,13 +11,13 @@ st.image('https://proprikol.ru/wp-content/uploads/2021/05/kartinki-titanik-44.jp
 
 st.title('Проект: "Титаник"')
 
-eugene = "Трубников Е.А. (trubnikov.e). Вариант 5"
-mariya = "Пархачёва М.А. (masha). Вариант "
-venera = "Фаткиева В.И. (iris20200). Вариант "
-artem = "Малашкин А.С. (strug2012). Вариант 3"
-olga = "Маслова О.И. (o.i.maslova). Вариант "
-ilya = "Юрин И.А. (ily-iury). Вариант "
-nadejda = "Чербаджи Н.А. (kaira1986). Вариант "
+eugene = "Трубников Е.А. (trubnikov.e). Вариант 5."
+mariya = "Пархачёва М.А. (masha). Вариант ."
+venera = "Фаткиева В.И. (iris20200). Вариант ."
+artem = "Малашкин А.С. (strug2012). Вариант 3."
+olga = "Маслова О.И. (o.i.maslova). Вариант ."
+ilya = "Юрин И.А. (ily-iury). Вариант ."
+nadejda = "Чербаджи Н.А. (kaira1986). Вариант ."
 
 members_list = [eugene, mariya, venera, artem, olga, ilya, nadejda]
 

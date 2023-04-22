@@ -1,5 +1,6 @@
-#Малашкин Артём Сергеевич 3 вариант
+# Малашкин Артём Сергеевич 3 вариант
 import streamlit as st
+
 
 def artem_def():
     st.text('Список пассажиров Титаника!')
@@ -12,4 +13,4 @@ def artem_def():
             sex = lst[5]
             age = lst[6]
             if sex == "male" and age != '' and 30 <= float(age) <= 60:
-                st.text(name[1:-1] + " "+ age + " " + pclass)
+                st.text(name[1:-1] + " " + age + " " + pclass)
