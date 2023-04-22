@@ -19,7 +19,7 @@ def eugene_def():
     save_fem = pd.DataFrame(data=save_fem, columns=columns)
 
     # Возможность показать df из 5 ЛР
-    if st.checkbox('Показать список'):
+    if st.checkbox('Показать весь список'):
         st.write(save_fem)
 
     # Вывести Pclass, Name, Age спасённых с именами начинающихся на введённый текст
