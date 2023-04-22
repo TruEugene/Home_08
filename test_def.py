@@ -24,4 +24,4 @@ def t_def():
 
     # Вывести Pclass, Name, Age спасённых
     values = st.slider("Задайте диапазон возраста", 0, 120, (30, 60))
-    st.write(save_male['Age'].between({values}))
+    st.write(save_male[save_male['Age'].between({values})])
