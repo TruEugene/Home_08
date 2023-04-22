@@ -9,7 +9,7 @@ import cherbadji_def
 
 st.image('https://proprikol.ru/wp-content/uploads/2021/05/kartinki-titanik-44.jpg')
 
-st.title('Проект: "Титаник"')
+st.title('Проект "Титаник"')
 
 eugene = "Трубников Е.А. (trubnikov.e). Вариант 5."
 mariya = "Пархачёва М.А. (masha). Вариант 7."
