@@ -1,4 +1,3 @@
-# Малашкин Артём Сергеевич 3 вариант
 import streamlit as st
 import pandas as pd
 
