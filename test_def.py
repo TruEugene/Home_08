@@ -24,9 +24,9 @@ def t_def():
     save_male['Age'] = save_male['Age'].fillna(0)
 
     # Вывести Pclass, Name, Age спасённых
-    values = st.slider("Задайте диапазон возраста", 0, 120, (30, 60))
-    st.write(values)
-    save_male_group = save_male[save_male['Age'].between(values)]
+    x, y = st.slider("Задайте диапазон возраста", 0, 120, (30, 60))
+    st.write(x, y)
+    save_male_group = save_male[save_male['Age'].between(x, y)]
     st.write(save_male_group)
 
 
