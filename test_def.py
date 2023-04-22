@@ -19,8 +19,9 @@ def t_def():
     # Выберем нужные столбцы.
     columns = ['Name', 'Age', 'Pclass']
 
-    # Удалим ненужные столбцы из отфильтрованной таблицы.
+    # Удалим ненужные столбцы из отфильтрованной таблицы, а также заполним пропуски нулями
     save_male = pd.DataFrame(data=save_male, columns=columns)
+    save_male = save_male[save_male['Age'].fillna(0)]
 
     # Вывести Pclass, Name, Age спасённых
     values = st.slider("Задайте диапазон возраста", 0, 120, (30, 60))
