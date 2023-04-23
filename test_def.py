@@ -11,7 +11,7 @@ def t_def():
     df = pd.read_csv('data.csv')
 
     # Создадим переменную save_male и запишем в неё отфильтрованную таблицу по значениям из задания.
-    save_male = df[(df['Survived'] == 1) & (df['Sex'] == "male")]
+    save_male = df[df['Sex'] == "male"]
 
     # Выберем нужные столбцы.
     columns = ['Name', 'Age', 'Pclass']
