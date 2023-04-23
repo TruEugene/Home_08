@@ -1,6 +1,5 @@
 import streamlit as st
 import parhacheva_def
-import test_def
 import trubnikov_def
 import fatkieva_def
 import malashkin_def
