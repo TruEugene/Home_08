@@ -2,7 +2,6 @@
 import streamlit as st
 import pandas as pd
 
-
 def t_def():
     st.text('тестирование')
 
