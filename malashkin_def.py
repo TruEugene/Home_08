@@ -3,8 +3,6 @@ import pandas as pd
 
 
 def artem_def():
-    st.text('Вывод данных')
-
     st.header("Список  мужчин среднего возраста от 30 до 60 лет (поля Name, Age, Pclass)")
 
     # Создадим переменную df и запишем в неё содержимое data.csv
