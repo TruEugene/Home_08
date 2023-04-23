@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 def mariya_def():
-    st.title('Пассажиры Титаника')
+    #st.title('Пассажиры Титаника')
     st.header('Данные пассажиров с билетом нулевой стоимости')
 
     df = pd.read_csv('data.csv', delimiter=',')
