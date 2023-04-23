@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 
-def artem_def(Артём):
+def malashkin_def():
     st.text('Вывод данных')
 
     st.header("Список  мужчин среднего возраста от 30 до 60 лет (поля Name, Age, Pclass)")
