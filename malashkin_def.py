@@ -1,16 +1,29 @@
-# Малашкин Артём Сергеевич 3 вариант
+#Малашкин Артём Сергеевич, 3 вариант
 import streamlit as st
+import pandas as pd
 
 
-def artem_def():
-    st.text('Список пассажиров Титаника!')
-    age = st.slider('Сколько лет пассажирам титаника мужского пола от 30 до 60 лет', 30, 60, 35)
-    with open("data.csv") as data_file:
-        for line in data_file:
-            lst = line.split(',')
-            pclass = lst[2]
-            name = lst[3] + lst[4]
-            sex = lst[5]
-            age = lst[6]
-            if sex == "male" and age != '' and 30 <= float(age) <= 60:
-                st.text(name[1:-1] + " " + age + " " + pclass)
+def t_def():
+    st.text('тестирование')
+
+    #st.header("Список спасённых мужчин среднего возраста от 30 до 60 лет (поля Name, Age, Pclass)")
+
+    # Создадим переменную df и запишем в неё содержимое data.csv
+    df = pd.read_csv('data.csv')
+
+    # Создадим переменную save_male и запишем в неё отфильтрованную таблицу по значениям из задания.
+    male = df[df['Sex'] == "male"]
+
+    # Выберем нужные столбцы.
+    columns = ['Name', 'Age', 'Pclass']
+
+    # Удалим ненужные столбцы из отфильтрованной таблицы
+    male = pd.DataFrame(data=male, columns=columns)
+
+    # Вывести Pclass, Name, Age спасённых
+    x, y = st.slider("Задайте диапазон возраста", 0, 90, (30, 60))
+    male_filter = male[male['Age'].between(x, y)]
+    st.write(male_filter)
+
+    if st.checkbox('Показать список мужчин без указания возраста'):
+        st.write(male[male['Age'].isna()])
