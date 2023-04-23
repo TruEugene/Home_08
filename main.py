@@ -7,6 +7,7 @@ import malashkin_def
 import maslova_def
 import urin_def
 import cherbadji_def
+import test_def
 
 st.image('https://proprikol.ru/wp-content/uploads/2021/05/kartinki-titanik-44.jpg')
 
