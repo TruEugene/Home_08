@@ -8,7 +8,7 @@ def t_def():
         surv60 = 0
         unsurv30 = 0
         unsurv60 = 0
-        count = 0
+        count = 1
         for line in file:
             data = line.rstrip().split(",")
             count += 1
