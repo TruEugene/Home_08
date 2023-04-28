@@ -29,8 +29,8 @@ def t_def():
 
     if choice == "Спасенных":
         st.success("Доля спасенных пассажиров Титаника")
-        st.write("Моложе 30: ", round((surv30 / count) * 100, 2), "%",
-                 "Старше 60: ", round((surv60 / count) * 100, 2), "%")
+        st.write("Моложе 30: ", round((surv30 / count) * 100, 2), "%")
+        st.write("Старше 60: ", round((surv60 / count) * 100, 2), "%")
     elif choice == "Погибших":
         st.error("Доля погибших пассажиров Титаника")
         st.write("Моложе 30: ", round((unsurv30 / count) * 100, 2), "%",
