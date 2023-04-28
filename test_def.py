@@ -30,8 +30,8 @@ def t_def():
     if choice == "среди спасенных":
         st.success("Доля спасенных пассажиров Титаника")
         st.write("Моложе 30: ", round((surv30 / count) * 100, 2),
-                 "Старше 60: ", round(surv60 / count) * 100, 2)
+                 "Старше 60: ", round((surv60 / count) * 100, 2))
     else:
         st.error("Доля погибших пассажиров Титаника")
         st.write("Моложе 30: ", round((unsurv30 / count) * 100, 2),
-                 "Старше 60: ", round(unsurv60 / count) * 100, 2)
+                 "Старше 60: ", round((unsurv60 / count) * 100, 2))
