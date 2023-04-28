@@ -1,28 +1,35 @@
 import streamlit as st
-import pandas as pd
 
 
-def t_def():
-    st.text('Тест')
+def ilya_def():
+    st.header("Посчитать долю пассажиров Титаника, указав: вести поиск среди спасенных или погибших")
+    with open("data.csv") as file:
+        surv30 = 0
+        surv60 = 0
+        unsurv30 = 0
+        unsurv60 = 0
+        count = 0
+        for line in file:
+            data = line.rstrip().split(",")
+            count += 1
+            if data[1] == "1":
+                if data[6] < "30":
+                    surv30 += 1
+                if data[6] > "60":
+                    surv60 += 1
+            if data[1] == "0":
+                if data[6] < "30":
+                    unsurv30 += 1
+                if data[6] > "60":
+                    unsurv60 += 1
 
-    st.header("Список  мужчин среднего возраста от 30 до 60 лет (поля Name, Age, Pclass)")
+    choice = st.radio("Среди кого вести поиск?", ["среди спасенных", "среди погибших"])
 
-    # Создадим переменную df и запишем в неё содержимое data.csv
-    df = pd.read_csv('data.csv')
+    st.write(count)
 
-    # Создадим переменную male и запишем в неё отфильтрованную таблицу по значениям из задания.
-    male = df[df['Sex'] == "male"]
-
-    # Выберем нужные столбцы.
-    columns = ['Name', 'Age', 'Pclass']
-
-    # Удалим ненужные столбцы из отфильтрованной таблицы
-    male = pd.DataFrame(data=male, columns=columns)
-
-    # Вывести Pclass, Name, Age мужчин
-    x, y = st.slider("Задайте диапазон возраста", 0, 90, (30, 60))
-    male_filter = male[male['Age'].between(x, y)]
-    st.write(male_filter)
-
-    if st.checkbox('Показать список мужчин без указания возраста'):
-        st.write(male[male['Age'].isna()])
+    if choice == "среди спасенных":
+        st.success("Спасенные пассажиры Титаника")
+        st.write("Моложе 30: ", surv30, "Старше 60: ", surv60)
+    else:
+        st.error("Погибшие пассажиры Титаника")
+        st.write("Моложе 30: ", unsurv30, "Старше 60: ", unsurv60)
