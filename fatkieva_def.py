@@ -3,7 +3,7 @@ import pandas as pd
 
 def venera_def():
         # Загрузка данных о пассажирах "Титаника"
-    data = pd.read_csv('titanic.csv')
+    data = pd.read_csv('data.csv')
 
     # Определение функции для подсчета количества пассажиров по полу и статусу (спасенные/погибшие)
     def count_passengers_by_sex_and_status(sex, status):
