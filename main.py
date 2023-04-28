@@ -21,7 +21,7 @@ ilya = "Юрин И.А. (ily-iury) - вариант ."
 nadejda = "Чербаджи Н.А. (kaira1986) - вариант ."
 test = "тест"
 
-members_list = [eugene, mariya, venera, artem, olga, ilya, nadejda]
+members_list = [eugene, mariya, venera, artem, olga, ilya, nadejda, test]
 
 member = st.radio("Выберите, чью задачу хотите рассмотреть", members_list)
 
