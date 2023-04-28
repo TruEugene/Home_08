@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def nadejda_code():
+def nadejda_def():
     st.text("Подсчёт количества пассажиров (выбрав пол, и спасенных или погибших)")
 
     if st.checkbox("Спасен?"):
