@@ -25,8 +25,6 @@ def t_def():
 
     choice = st.radio("Вести поиск среди:", ["Спасенных", "Погибших"])
 
-    #    st.write(count)
-
     if choice == "Спасенных":
         st.success("Доля спасенных пассажиров Титаника")
         st.write("Моложе 30 - ", round((surv30 / count) * 100, 2), "%")
