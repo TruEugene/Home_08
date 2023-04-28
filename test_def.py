@@ -23,11 +23,11 @@ def t_def():
                 if data[6] > "60":
                     unsurv60 += 1
 
-    choice = st.radio("Вести поиск среди:", ["спасенных", "погибших"])
+    choice = st.radio("Вести поиск среди:", ["Спасенных", "Погибших"])
 
     #    st.write(count)
 
-    if choice == "среди спасенных":
+    if choice == "Спасенных":
         st.success("Доля спасенных пассажиров Титаника")
         st.write("Моложе 30: ", round((surv30 / count) * 100, 2),
                  "Старше 60: ", round((surv60 / count) * 100, 2))
