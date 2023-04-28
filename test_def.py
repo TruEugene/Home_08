@@ -2,7 +2,7 @@ import streamlit as st
 
 
 def t_def():
-#    st.header("Посчитать долю пассажиров Титаника, указав: вести поиск среди спасенных или погибших")
+    #    st.header("Посчитать долю пассажиров Титаника, указав: вести поиск среди спасенных или погибших")
     with open("data.csv") as file:
         surv30 = 0
         surv60 = 0
@@ -25,11 +25,13 @@ def t_def():
 
     choice = st.radio("Среди кого вести поиск?", ["среди спасенных", "среди погибших"])
 
-#    st.write(count)
+    #    st.write(count)
 
     if choice == "среди спасенных":
         st.success("Доля спасенных пассажиров Титаника")
-        st.write("Моложе 30: ", surv30/count, "Старше 60: ", surv60/count)
+        st.write("Моложе 30: ", round((surv30 / count) * 100, 2),
+                 "Старше 60: ", round(surv60 / count) * 100, 2)
     else:
         st.error("Доля погибших пассажиров Титаника")
-        st.write("Моложе 30: ", unsurv30/count, "Старше 60: ", unsurv60/count)
+        st.write("Моложе 30: ", round((unsurv30 / count) * 100, 2),
+                 "Старше 60: ", round(unsurv60 / count) * 100, 2)
