@@ -25,11 +25,11 @@ def t_def():
 
     choice = st.radio("Среди кого вести поиск?", ["среди спасенных", "среди погибших"])
 
-    st.write(count)
+#    st.write(count)
 
     if choice == "среди спасенных":
-        st.success("Спасенные пассажиры Титаника")
-        st.write("Моложе 30: ", surv30, "Старше 60: ", surv60)
+        st.success("Доля спасенных пассажиров Титаника")
+        st.write("Моложе 30: ", surv30/count, "Старше 60: ", surv60/count)
     else:
-        st.error("Погибшие пассажиры Титаника")
-        st.write("Моложе 30: ", unsurv30, "Старше 60: ", unsurv60)
+        st.error("Доля погибших пассажиров Титаника")
+        st.write("Моложе 30: ", unsurv30/count, "Старше 60: ", unsurv60/count)
