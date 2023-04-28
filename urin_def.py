@@ -9,17 +9,16 @@ def ilya_def():
         unsurv30 = 0
         unsurv60 = 0
         for line in file:
-            survived = line.rstrip().split(",")
-#            unsurvived = line.rstrip().split(",")
-            if survived[1] == "1":
-                if survived[6] < "30":
+            data = line.rstrip().split(",")
+            if data[1] == "1":
+                if data[6] < "30":
                     surv30 += 1
-                if survived[6] > "60":
+                if data[6] > "60":
                     surv60 += 1
-            if survived[1] == "0":
-                if survived[6] < "30":
+            if data[1] == "0":
+                if data[6] < "30":
                     unsurv30 += 1
-                if survived[6] > "60":
+                if data[6] > "60":
                     unsurv60 += 1
 
     choice = st.radio("Среди кого вести поиск?", ["среди спасенных", "среди погибших"])
