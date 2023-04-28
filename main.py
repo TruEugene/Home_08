@@ -18,7 +18,7 @@ venera = "Фаткиева В.И. (iris20200) - вариант 8."
 artem = "Малашкин А.С. (strug2012) - вариант 3."
 olga = "Маслова О.И. (o.i.maslova) - вариант ."
 ilya = "Юрин И.А. (ily-iury) - вариант 9."
-nadejda = "Чербаджи Н.А. (kaira1986) - вариант ."
+nadejda = "Чербаджи Н.А. (kaira1986) - вариант 8."
 test = "тест"
 
 members_list = [eugene, mariya, venera, artem, olga, ilya, nadejda]

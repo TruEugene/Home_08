@@ -30,8 +30,8 @@ def nadejda_def():
                 elif save == '0' and save == survived:
                     count_died_female += 1
     if save == '1':
-        st.text(f'количество спасенных мужчин {count_save_male}')
-        st.text(f'количество спасенных женщин {count_save_female}')
+        st.text(f'Количество спасенных мужчин {count_save_male}')
+        st.text(f'Количество спасенных женщин {count_save_female}')
     else:
-        st.text(f'количество погибших мужчин {count_died_male}')
-        st.text(f'количество погибших женщин {count_died_female}')
+        st.text(f'Количество погибших мужчин {count_died_male}')
+        st.text(f'Количество погибших женщин {count_died_female}')
