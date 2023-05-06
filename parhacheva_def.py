@@ -7,7 +7,7 @@ def pass_list(data, save):
             titanic += [line]
     return (titanic)
 
-def parhacheva_def():
+def mariya_def():
     with open("data.csv") as data_file:
         data = data_file.readlines()[1:]
     st.title('Список пассажиров Титаника с нулевой стоимостью билета')
