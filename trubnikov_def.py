@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
 
+data = pd.read_csv('data.csv')
+
 
 def eugene_def(n):
-    data = pd.read_csv('data.csv')
     # Создадим переменную saved и запишем в неё отфильтрованную таблицу
     saved = data[data['Survived'] == 1]
 
