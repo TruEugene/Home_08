@@ -28,7 +28,7 @@ def venera_def():
             st.write("Количество погибших мужчин: ", male_not_survived)
     elif choice == "Женщины":
         st.subheader("Статистика по пассажирам женского пола")
-        if saved == "Погибшие":
+        if saved == "Спасенные":
             female_survived = count_passengers_by_sex_and_status('female', 1)
             st.write("Количество выживших женщин: ", female_survived)
         if saved == "Погибшие":
