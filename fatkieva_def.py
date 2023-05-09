@@ -15,16 +15,22 @@ def venera_def():
     # Заголовок и описание веб-приложения
     st.header("Анализ данных пассажиров Титаника")
 
-    # Вывод статистики по количеству пассажиров мужского пола
-    st.subheader("Статистика по пассажирам мужского пола")
-    male_survived = count_passengers_by_sex_and_status('male', 1)
-    male_not_survived = count_passengers_by_sex_and_status('male', 0)
-    st.write("Количество выживших мужчин: ", male_survived)
-    st.write("Количество погибших мужчин: ", male_not_survived)
+    choice = st.radio("Показать статистику среди:", ["Мужчины", "Женщины"])
+    saved = st.radio("Показать:", ["Спасенные", "Погибшие"])
 
-    # Вывод статистики по количеству пассажиров женского пола
-    st.subheader("Статистика по пассажирам женского пола")
-    female_survived = count_passengers_by_sex_and_status('female', 1)
-    female_not_survived = count_passengers_by_sex_and_status('female', 0)
-    st.write("Количество выживших женщин: ", female_survived)
-    st.write("Количество погибших женщин: ", female_not_survived)
+    if choice == "Мужчины":
+        st.subheader("Статистика по пассажирам мужского пола")
+        if saved == "Спасенные":
+            male_survived = count_passengers_by_sex_and_status('male', 1)
+            st.write("Количество выживших мужчин: ", male_survived)
+        if saved == "Погибшие":
+            male_not_survived = count_passengers_by_sex_and_status('male', 0)
+            st.write("Количество погибших мужчин: ", male_not_survived)
+    elif choice == "Женщины":
+        st.subheader("Статистика по пассажирам женского пола")
+        if saved == "Погибшие":
+            female_survived = count_passengers_by_sex_and_status('female', 1)
+            st.write("Количество выживших женщин: ", female_survived)
+        if saved == "Погибшие":
+            female_not_survived = count_passengers_by_sex_and_status('female', 0)
+            st.write("Количество погибших женщин: ", female_not_survived)
