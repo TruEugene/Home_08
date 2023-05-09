@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 
-def eugene_def(name):
+def eugene_def(n):
     data = pd.read_csv('data.csv')
     # Создадим переменную saved и запишем в неё отфильтрованную таблицу
     saved = data[data['Survived'] == 1]
@@ -14,8 +14,8 @@ def eugene_def(name):
     saved = pd.DataFrame(data=saved, columns=columns)
 
     # Вывести Pclass, Name, Age спасённых с именами начинающихся на введённый текст
-    output = saved[saved['Name'].str.startswith(name)]
-    return output
+    out = saved[saved['Name'].str.startswith(n)]
+    return out
 
 
 st.header("Поиск спасённых пассажиров Титаника")
