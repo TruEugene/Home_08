@@ -16,10 +16,11 @@ def venera_def():
     st.header("Анализ данных пассажиров Титаника")
 
     choice = st.radio("Показать статистику среди:", ["Мужчины", "Женщины"])
-    saved = st.radio("Показать:", ["Спасенные", "Погибшие"])
+
 
     if choice == "Мужчины":
         st.subheader("Статистика по пассажирам мужского пола")
+        saved = st.radio("Показать:", ["Спасенные", "Погибшие"])
         if saved == "Спасенные":
             male_survived = count_passengers_by_sex_and_status('male', 1)
             st.write("Количество выживших мужчин: ", male_survived)
@@ -28,6 +29,7 @@ def venera_def():
             st.write("Количество погибших мужчин: ", male_not_survived)
     elif choice == "Женщины":
         st.subheader("Статистика по пассажирам женского пола")
+        saved = st.radio("Показать:", ["Спасенные", "Погибшие"])
         if saved == "Спасенные":
             female_survived = count_passengers_by_sex_and_status('female', 1)
             st.write("Количество выживших женщин: ", female_survived)
