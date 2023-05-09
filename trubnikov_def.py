@@ -1,7 +1,5 @@
-import streamlit as st
 import pandas as pd
 
-df = pd.read_csv('data.csv')
 
 
 def eugene_def(data, n):
@@ -18,7 +16,3 @@ def eugene_def(data, n):
     out = saved[saved['Name'].str.startswith(n)]
     return out
 
-
-st.header("Поиск спасённых пассажиров Титаника")
-name = st.text_input("Введите первые буквы фамилии")
-st.write(eugene_def(df, name))
