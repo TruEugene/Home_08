@@ -26,7 +26,9 @@ members_list = [eugene, mariya, venera, artem, olga, ilya, nadejda]
 member = st.radio("Выберите, чью задачу хотите рассмотреть", members_list)
 
 if member == eugene:
-    trubnikov_def.eugene_def()
+    name = st.text_input("Введите первые буквы фамилии")
+    out = trubnikov_def.eugene_def(name)
+    st.write(out)
 elif member == mariya:
     parhacheva_def.mariya_def()
 elif member == venera:

@@ -20,6 +20,6 @@ def eugene_def(n):
 
 st.header("Поиск спасённых пассажиров Титаника")
 
-name = st.text_input("Введите первые буквы фамилии")
-output = eugene_def(name)
-st.write(output)
+#name = st.text_input("Введите первые буквы фамилии")
+#output = eugene_def(name)
+#st.write(output)
