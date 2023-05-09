@@ -3,7 +3,6 @@ import pandas as pd
 
 
 def eugene_def(n):
-    st.header("Поиск спасённых пассажиров Титаника")
     data = pd.read_csv('data.csv')
     # Создадим переменную saved и запишем в неё отфильтрованную таблицу
     saved = data[data['Survived'] == 1]
