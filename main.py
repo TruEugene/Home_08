@@ -28,7 +28,7 @@ member = st.radio("Выберите, чью задачу хотите рассм
 if member == eugene:
 #    st.header("Поиск спасённых пассажиров Титаника")
 #    name = st.text_input("Введите первые буквы фамилии")
-    out = trubnikov_def.eugene_def()
+    trubnikov_def.eugene_def(trubnikov_def.df, trubnikov_def.name)
 #    st.write(out)
 elif member == mariya:
     parhacheva_def.mariya_def()
