@@ -1,5 +1,5 @@
 import pandas as pd
-from main import eugene_def
+from trubnikov_def import eugene_def
 
 
 def test_eugene_def():
