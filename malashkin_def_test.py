@@ -29,4 +29,3 @@ def test_data_3():
     return pd.DataFrame({'Name': ['John Smith', 'Samantha Johnson'],
                          'Age': [35, 50],
                          'Sex': ['male', 'female'],
-                         'Pclass': [1, 2]})
