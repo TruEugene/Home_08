@@ -10,6 +10,7 @@ def test_data():
 def filter_male(data):
     return data[data['Sex'] == 'male']
 
+
 def test_filter_male():
     # Создадим тестовый DataFrame с двумя мужчинами и двумя женщинами
     data = pd.DataFrame({'Name': ['John Smith', 'Michael Brown', 'Mary Johnson', 'Emily Davis'],
