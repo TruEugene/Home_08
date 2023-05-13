@@ -1,7 +1,6 @@
 import pandas as pd
 
 
-
 def eugene_def(data, n):
     # Создадим переменную saved и запишем в неё отфильтрованную таблицу
     saved = data[data['Survived'] == 1]
@@ -15,4 +14,3 @@ def eugene_def(data, n):
     # Вывести Pclass, Name, Age спасённых с именами начинающихся на введённый текст
     out = saved[saved['Name'].str.startswith(n)]
     return out
-
