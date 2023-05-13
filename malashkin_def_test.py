@@ -1,4 +1,5 @@
 import pandas as pd
+from malashkin_def import artem_def
 import pytest
 
 def test_data():
