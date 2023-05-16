@@ -1,5 +1,5 @@
 import streamlit as st
-import pandas as pdimpor
+import pandas as pd
 
 data = pd.read_csv('titanic.csv')
 
