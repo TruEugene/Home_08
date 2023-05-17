@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-data = pd.read_csv('titanic.csv')
+data = pd.read_csv('data.csv')
 
 
 def count_passengers_by_sex_and_status(sex, status):
