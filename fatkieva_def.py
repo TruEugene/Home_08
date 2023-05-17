@@ -10,7 +10,7 @@ def count_passengers_by_sex_and_status(sex, status):
     return count
 
 
-def Venera_def():
+def venera_def():
     # Заголовок и описание веб-приложения
     st.title("Анализ данных пассажиров Титаника")
 
