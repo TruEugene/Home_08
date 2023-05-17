@@ -43,5 +43,3 @@ elif member == ilya:
     urin_def.ilya_def()
 elif member == nadejda:
     cherbadji_def.nadejda_def()
-elif member == test:
-    test_def.t_def()
