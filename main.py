@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 import parhacheva_def
 import trubnikov_def
 import fatkieva_def
@@ -6,7 +7,6 @@ import malashkin_def
 import maslova_def
 import urin_def
 import cherbadji_def
-import test_def
 
 st.image('https://proprikol.ru/wp-content/uploads/2021/05/kartinki-titanik-44.jpg')
 
@@ -26,7 +26,11 @@ members_list = [eugene, mariya, venera, artem, olga, ilya, nadejda]
 member = st.radio("Выберите, чью задачу хотите рассмотреть", members_list)
 
 if member == eugene:
-    trubnikov_def.eugene_def()
+    st.header("Поиск спасённых пассажиров Титаника")
+    df = pd.read_csv('data.csv')
+    name = st.text_input("Введите первые буквы фамилии")
+    out = trubnikov_def.eugene_def(df, name)
+    st.write(out)
 elif member == mariya:
     parhacheva_def.mariya_def()
 elif member == venera:
@@ -39,5 +43,3 @@ elif member == ilya:
     urin_def.ilya_def()
 elif member == nadejda:
     cherbadji_def.nadejda_def()
-elif member == test:
-    test_def.t_def()
