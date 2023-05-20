@@ -30,4 +30,3 @@ def test_eugene_def(monkeypatch):
 
     # Проверка результатов
     pd.testing.assert_frame_equal(result, expected_result)
-

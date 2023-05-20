@@ -7,7 +7,6 @@ import malashkin_def
 import maslova_def
 import urin_def
 import cherbadji_def
-import test_def
 
 st.image('https://proprikol.ru/wp-content/uploads/2021/05/kartinki-titanik-44.jpg')
 
@@ -44,5 +43,3 @@ elif member == ilya:
     urin_def.ilya_def()
 elif member == nadejda:
     cherbadji_def.nadejda_def()
-elif member == test:
-    test_def.t_def()
