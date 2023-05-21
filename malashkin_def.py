@@ -4,7 +4,7 @@ import pandas as pd
 
 def artem_def():
     st.header("Список мужчин среднего возраста от 30 до 60 лет "
-              "(поля Name, Age, Pclass)")
+              "(поля Name, Age, Sex, Pclass)")
 
     # Создадим переменную df и запишем в неё содержимое data.csv
     df = pd.read_csv('data.csv')
@@ -14,7 +14,7 @@ def artem_def():
     male = df[df['Sex'] == "male"]
 
     # Выберем нужные столбцы.
-    columns = ['Name', 'Age', 'Pclass']
+    columns = ['Name', 'Age', 'Sex', 'Pclass']
 
     # Удалим ненужные столбцы из отфильтрованной таблицы.
     male = pd.DataFrame(data=male, columns=columns)
