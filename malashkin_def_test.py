@@ -2,25 +2,19 @@ import pandas as pd
 import streamlit as st
 from malashkin_def import artem_def
 
-
 def test_artem_def():
-    """
-    Функция для тестирования artem_def.
-    """
     # Создаем тестовый DataFrame с данными
-    data = pd.DataFrame(
-        {
-            'Name': ['John Smith', 'Michael Brown', 'Emma Johnson'],
-            'Age': [35, 45, 55],
-            'Sex': ['male', 'male', 'female'],
-            'Pclass': [1, 2, 3]
-        }
-    )
+    data = pd.DataFrame({
+        'Name': ['John Smith', 'Michael Brown', 'Emma Johnson'],
+        'Age': [35, 45, 55],
+        'Sex': ['male', 'male', 'female'],
+        'Pclass': [1, 2, 3]
+    })
 
     # Заглушка для streamlit.write
     def mock_write(data):
         assert len(data) == 2  # Ожидаем 2 строки
-        assert (data['Sex'] == 'male').all()  # Все строки - мужской пол
+        assert (data['Sex'] == 'male').all()  # Все строки - мужского пола
 
     # Подменяем streamlit.write
     original_write = st.write
