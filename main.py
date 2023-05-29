@@ -40,6 +40,10 @@ elif member == artem:
 elif member == olga:
     maslova_def.olga_def()
 elif member == ilya:
-    urin_def.ilya_def()
+    with open("data.csv") as file:
+        data = file.readlines()
+    save = 1
+    out = urin_def.ilya_def(data, save)
+    st.write(out)
 elif member == nadejda:
     cherbadji_def.nadejda_def()

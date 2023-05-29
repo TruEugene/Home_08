@@ -34,7 +34,6 @@ def ilya_def(data, save):
     #        uavg = uavg1 + uavg2
     #  st.text(uavg)
 
-
-with open("data.csv") as file:
-    data = file.readlines()
-print(ilya_def(data, 1))
+# with open("data.csv") as file:
+#    data = file.readlines()
+# print(ilya_def(data, 1))
