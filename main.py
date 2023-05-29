@@ -42,7 +42,10 @@ elif member == olga:
 elif member == ilya:
     with open("data.csv") as file:
         data = file.readlines()
-    save = 1
+    if st.checkbox("Спасен?"):
+        save = '1'
+    else:
+        save = '0'
     out = urin_def.ilya_def(data, save)
     st.write(out)
 elif member == nadejda:
