@@ -1,6 +1,3 @@
-import streamlit as st
-
-
 def ilya_def(data, save):
     #    unsurv60 = 0
     #    unsurv30 = 0
@@ -31,7 +28,7 @@ def ilya_def(data, save):
         avg = avg1 + avg2
     return avg
     # st.text(avg)
-    ##   st.warning("Погибшие пассажиры Титаника")
+    # st.warning("Погибшие пассажиры Титаника")
     # uavg1 = (min30 + str(unsurv30) + ", ")
     # uavg2 = (max60 + str(unsurv60))
     #        uavg = uavg1 + uavg2
