@@ -24,7 +24,7 @@ with open('data.csv') as csv_file:
                     female_survived += 1
                 elif row[1] == '0':
                     female_died += 1
-    print(f'Male passengers survived: {male_survived}')
-    print(f'Male passengers died: {male_died}')
-    print(f'Female passengers survived: {female_survived}')
-    print(f'Female passengers died: {female_died}')
+    st.text(f'Male passengers survived: {male_survived}')
+    st.text(f'Male passengers died: {male_died}')
+    st.text(f'Female passengers survived: {female_survived}')
+    st.text(f'Female passengers died: {female_died}')
