@@ -1,34 +1,32 @@
 import streamlit as st
 
 
-def nadejda_def():
+def nadejda_def(data):
     st.header("Подсчёт количества пассажиров (выбрав пол, и спасенных или погибших)")
 
     if st.checkbox("Спасен?"):
         save = '1'
     else:
         save = '0'
+    count_save_male = 0
+    count_save_female = 0
+    count_died_female = 0
+    count_died_male = 0
 
-    with open("data.csv") as titanic_file:
-        count_save_male = 0
-        count_save_female = 0
-        count_died_female = 0
-        count_died_male = 0
-        next(titanic_file)
-        for line in titanic_file:
-            lst = line.split(",")
-            sex = lst[5]
-            survived = lst[1]
-            if sex == 'male':
-                if save == '1' and save == survived:
-                    count_save_male += 1
-                elif save == '0' and save == survived:
-                    count_died_male += 1
-            elif sex == 'female':
-                if save == '1' and save == survived:
-                    count_save_female += 1
-                elif save == '0' and save == survived:
-                    count_died_female += 1
+    for line in data:
+        lst = line.split(",")
+        sex = lst[5]
+        survived = lst[1]
+        if sex == 'male':
+            if save == '1' and save == survived:
+                count_save_male += 1
+            elif save == '0' and save == survived:
+                count_died_male += 1
+        elif sex == 'female':
+            if save == '1' and save == survived:
+                count_save_female += 1
+            elif save == '0' and save == survived:
+                count_died_female += 1
     if save == '1':
         st.text(f'Количество спасенных мужчин {count_save_male}')
         st.text(f'Количество спасенных женщин {count_save_female}')

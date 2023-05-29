@@ -1,20 +1,31 @@
-import pandas as pd
+import unittest
+from io import StringIO
+from contextlib import redirect_stdout
+from cherbadji_def import nadejda_def
 
 
-def test_count_men_women_in_selected_survived():
-    grid = {'Survived': [0, 1, 0, 1, 0, 1, 0], 'Sex': ['female', 'male', 'female', 'male', 'female', 'female', 'male']}
-    test_data = pd.DataFrame(grid)
-    assert test_count_men_women_in_selected_survived(test_data, 1) == (1, 0)
+class TestNadejdaDef(unittest.TestCase):
+    def test_nadejda_def(self):
+        data = [
+            '100,1,male',
+            '120,1,female',
+            '140,0,male',
+            '160,1,male',
+            '180,0,female',
+            '200,1,female'
+        ]
+
+        expected_output = 3
+
+        # Заменяем стандартный вывод на StringIO для перехвата результатов
+        with redirect_stdout(StringIO()) as stdout:
+            nadejda_def(data)
+
+            # Получаем результаты из перехваченного вывода
+            output = stdout.getvalue().strip()
+
+        self.assertEqual(output, expected_output)
 
 
-def test_count_men_women_in_selected_survived_if_sex_none():
-    grid = {'survived': [0, 1, 0, 0, 0, 1, 1], 'Sex': ['female', 'male', None, 'male', 'female', 'female', 'male']}
-    test_data = pd.DataFrame(grid)
-    assert test_count_men_women_in_selected_survived(test_data, 1) == (1, 0)
-
-
-def test_count_men_women_in_selected_survived_if_survived_none():
-    grid = {'survived': [0, 1, None, 0, 0, 1, 1],
-            'Sex': ['female', 'male', 'female', 'male', 'female', 'female', 'male']}
-    test_data = pd.DataFrame(grid)
-    assert test_count_men_women_in_selected_survived(test_data, 1) == (1, 0)
+if __name__ == "__main__":
+    unittest.main()
