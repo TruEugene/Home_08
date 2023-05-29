@@ -1,30 +1,37 @@
 import streamlit as st
-import csv
 
 
-with open('data.csv') as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    line_count = 0
-    male_survived = 0
-    male_died = 0
-    female_survived = 0
-    female_died = 0
-    for row in csv_reader:
-        if line_count == 0:
-            line_count += 1
-        else:
-            line_count += 1
-            if row[4] == 'male':
-                if row[1] == '1':
-                    male_survived += 1
-                elif row[1] == '0':
-                    male_died += 1
-            elif row[4] == 'female':
-                if row[1] == '1':
-                    female_survived += 1
-                elif row[1] == '0':
-                    female_died += 1
-    st.text(f'Male passengers survived: {male_survived}')
-    st.text(f'Male passengers died: {male_died}')
-    st.text(f'Female passengers survived: {female_survived}')
-    st.text(f'Female passengers died: {female_died}')
+def nadejda_def():
+    st.header("Подсчёт количества пассажиров (выбрав пол, и спасенных или погибших)")
+
+    if st.checkbox("Спасен?"):
+        save = '1'
+    else:
+        save = '0'
+
+    with open("data.csv") as titanic_file:
+        count_save_male = 0
+        count_save_female = 0
+        count_died_female = 0
+        count_died_male = 0
+        next(titanic_file)
+        for line in titanic_file:
+            lst = line.split(",")
+            sex = lst[5]
+            survived = lst[1]
+            if sex == 'male':
+                if save == '1' and save == survived:
+                    count_save_male += 1
+                elif save == '0' and save == survived:
+                    count_died_male += 1
+            elif sex == 'female':
+                if save == '1' and save == survived:
+                    count_save_female += 1
+                elif save == '0' and save == survived:
+                    count_died_female += 1
+    if save == '1':
+        st.text(f'Количество спасенных мужчин {count_save_male}')
+        st.text(f'Количество спасенных женщин {count_save_female}')
+    else:
+        st.text(f'Количество погибших мужчин {count_died_male}')
+        st.text(f'Количество погибших женщин {count_died_female}')
