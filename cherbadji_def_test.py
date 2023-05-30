@@ -1,30 +1,33 @@
 import unittest
-from io import StringIO
-from contextlib import redirect_stdout
-from cherbadji_def import nadejda_def
+import pandas as pd
+from cherbadji_def import filtred
 
 
-class TestNadejdaDef(unittest.TestCase):
-    def test_nadejda_def(self):
-        data = [
-            '100,1,male',
-            '120,1,female',
-            '140,0,male',
-            '160,1,male',
-            '180,0,female',
-            '200,1,female'
-        ]
+data = {'Sex': ['male', 'female', 'male', 'male', 'female', 'female'],
+        'Survived': [1, 1, 0, 1, 0, 1]}
+df = pd.DataFrame(data)
 
-        expected_output = 3
+class TestFiltred(unittest.TestCase):
+    def test_filtred(self):
+        # Проверяем результаты для спасенных мужчин
+        result = filtred(df, 'male', 1)
+        expected_result = 2
+        self.assertEqual(result, expected_result)
 
-        # Заменяем стандартный вывод на StringIO для перехвата результатов
-        with redirect_stdout(StringIO()) as stdout:
-            nadejda_def(data)
+        # Проверяем результаты для спасенных женщин
+        result = filtred(df, 'female', 1)
+        expected_result = 2
+        self.assertEqual(result, expected_result)
 
-            # Получаем результаты из перехваченного вывода
-            output = stdout.getvalue().strip()
+        # Проверяем результаты для погибших мужчин
+        result = filtred(df, 'male', 0)
+        expected_result = 1
+        self.assertEqual(result, expected_result)
 
-        self.assertEqual(output, expected_output)
+        # Проверяем результаты для погибших женщин
+        result = filtred(df, 'female', 0)
+        expected_result = 1
+        self.assertEqual(result, expected_result)
 
 
 if __name__ == "__main__":
