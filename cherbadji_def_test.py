@@ -2,10 +2,10 @@ import unittest
 import pandas as pd
 from cherbadji_def import filtred
 
-
 data = {'Sex': ['male', 'female', 'male', 'male', 'female', 'female'],
         'Survived': [1, 1, 0, 1, 0, 1]}
 df = pd.DataFrame(data)
+
 
 class TestFiltred(unittest.TestCase):
     def test_filtred(self):
