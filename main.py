@@ -49,6 +49,4 @@ elif member == ilya:
     out = urin_def.ilya_def(data, save)
     st.write(out)
 elif member == nadejda:
-    with open("data.csv") as titanic_file:
-        data = titanic_file.readlines()
-    cherbadji_def.nadejda_def(data)
+    cherbadji_def.nadejda_def()

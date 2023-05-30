@@ -1,35 +1,30 @@
 import streamlit as st
+import pandas as pd
+
+df = pd.read_csv('data.csv')
 
 
-def nadejda_def(data):
+def filtred(data, sex, save):
+    filtered_data = data[(data['Sex'] == sex) & (data['Survived'] == save)]
+    count = filtered_data.shape[0]
+    return count
+
+
+def nadejda_def():
     st.header("Подсчёт количества пассажиров (выбрав пол, и спасенных или погибших)")
 
     if st.checkbox("Спасен?"):
         save = '1'
     else:
         save = '0'
-    count_save_male = 0
-    count_save_female = 0
-    count_died_female = 0
-    count_died_male = 0
 
-    for line in data:
-        lst = line.split(",")
-        sex = lst[5]
-        survived = lst[1]
-        if sex == 'male':
-            if save == '1' and save == survived:
-                count_save_male += 1
-            elif save == '0' and save == survived:
-                count_died_male += 1
-        elif sex == 'female':
-            if save == '1' and save == survived:
-                count_save_female += 1
-            elif save == '0' and save == survived:
-                count_died_female += 1
     if save == '1':
-        st.text(f'Количество спасенных мужчин {count_save_male}')
-        st.text(f'Количество спасенных женщин {count_save_female}')
+        m_surv = filtred(df, 'male', 1)
+        f_surv = filtred(df, 'female', 1)
+        st.text(f'Количество спасенных мужчин {m_surv}')
+        st.text(f'Количество спасенных женщин {f_surv}')
     else:
-        st.text(f'Количество погибших мужчин {count_died_male}')
-        st.text(f'Количество погибших женщин {count_died_female}')
+        m_not_surv = filtred(df, 'male', 0)
+        f_not_surv = filtred(df, 'female', 0)
+        st.text(f'Количество погибших мужчин {m_not_surv}')
+        st.text(f'Количество погибших женщин {f_not_surv}')
